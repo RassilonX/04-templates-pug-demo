@@ -5,9 +5,11 @@ const app = express();
 
 const routes = require('./routes/routes');
 
-// set up view engine
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
-app.use(express.static("./public"));
+https: app.use(express.static("./public"));
 
 app.use('/', routes())
 
